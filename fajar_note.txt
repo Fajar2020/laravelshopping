@@ -1,0 +1,54 @@
+composer create-project laravel/laravel example-app
+
+//Authentication
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+
+npm install
+npm run dev
+
+create database
+edit database name in .env
+
+create controller 
+php artisan make:controller AdminController
+php artisan make:model Admin -m
+
+//untuk isi database pakai seeding
+php artisan make:factory PostFactory
+php artisan migrate --seed
+
+//create guard for Admin
+make adjustment in config->auth.php
+
+//get list of route
+php artisan r:l
+
+
+add in fortifyServiceProvider.php
+in function register
+$this->app->when([
+            AdminController::class,
+            AttemptToAuthenticate::class,
+            RedirectIfTwoFactorAuthenticatable::class
+        ])->needs(StatefulGuard::class)->give(function(){
+            return Auth::guard('admin');
+        });
+
+
+// check folder App\Guards and AdminController and add route group in web.php
+
+copy redirect dan attemp dari vendor laravel fortify ke action fortify
+edit file http/middleware/RedirectIfAuthenticated
+
+
+// create controller with folder
+php artisan make:controller Backend/AdminProfileController
+
+
+tambah field di db untuk user tambahkan data ke CreateNewUser
+
+
+// for pagination
+php artisan vendor:publish --tag=laravel-pagination
+terus edit di resources/views/vendor/pagination atau resources/views/vendor/default.blade.php
