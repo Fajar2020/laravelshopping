@@ -168,7 +168,7 @@
 <div class="form-group">
     <h5>Product Size En <span class="text-danger">*</span></h5>
     <div class="controls">
-        <input type="text" name="product_size_en" class="form-control" value="{{ $products->product_size_en }}" data-role="tagsinput" required="">
+        <input type="text" name="product_size_en" class="form-control" value="{{ $products->product_size_en }}" data-role="tagsinput">
         @error('product_size_en') 
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -180,7 +180,7 @@
 <div class="form-group">
     <h5>Product Size Ind <span class="text-danger">*</span></h5>
     <div class="controls">
-        <input type="text" name="product_size_ind" class="form-control" value="{{ $products->product_size_ind }}"  data-role="tagsinput" required="">
+        <input type="text" name="product_size_ind" class="form-control" value="{{ $products->product_size_ind }}"  data-role="tagsinput" >
         @error('product_size_ind') 
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -193,7 +193,7 @@
 <div class="form-group">
     <h5>Product Color En <span class="text-danger">*</span></h5>
     <div class="controls">
-        <input type="text" name="product_color_en" class="form-control" value="{{ $products->product_color_en }}"  data-role="tagsinput" required="">
+        <input type="text" name="product_color_en" class="form-control" value="{{ $products->product_color_en }}"  data-role="tagsinput">
         @error('product_color_en') 
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -205,7 +205,7 @@
 <div class="form-group">
 	<h5>Product Color Ind <span class="text-danger">*</span></h5>
 	<div class="controls">
-        <input type="text" name="product_color_ind" class="form-control" value="{{ $products->product_color_ind }}" data-role="tagsinput" required="">
+        <input type="text" name="product_color_ind" class="form-control" value="{{ $products->product_color_ind }}" data-role="tagsinput" >
         @error('product_color_ind') 
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -233,7 +233,7 @@
 <div class="form-group">
     <h5>Product Discount Price <span class="text-danger">*</span></h5>
     <div class="controls">
-        <input type="text" name="discount_price" class="form-control" required="" value="{{ $products->discount_price }}">
+        <input type="text" name="discount_price" class="form-control" value="{{ $products->discount_price }}">
         @error('discount_price') 
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -294,11 +294,11 @@
 <div class="form-group">
     <div class="controls">
         <fieldset>
-            <input type="checkbox" id="checkbox_2" name="hot_deals" value={{ $products->hot_deals == 1 ? 'checked': '' }}>
+            <input type="checkbox" id="checkbox_2" name="hot_deals" value="1" {{ $products->hot_deals == 1 ? 'checked': '' }}>
             <label for="checkbox_2">Hot Deals</label>
         </fieldset>
         <fieldset>
-            <input type="checkbox" id="checkbox_3" name="featured" value={{ $products->featured == 1 ? 'checked': '' }}>
+            <input type="checkbox" id="checkbox_3" name="featured" value="1" {{ $products->featured == 1 ? 'checked': '' }}>
             <label for="checkbox_3">Featured</label>
         </fieldset>
     </div>
@@ -309,11 +309,11 @@
 <div class="form-group">
     <div class="controls">
         <fieldset>
-            <input type="checkbox" id="checkbox_4" name="special_offer" value={{ $products->special_offer == 1 ? 'checked': '' }}>
+            <input type="checkbox" id="checkbox_4" name="special_offer" value="1" {{ $products->special_offer == 1 ? 'checked': '' }}>
             <label for="checkbox_4">Special Offer</label>
         </fieldset>
         <fieldset>
-            <input type="checkbox" id="checkbox_5" name="special_deals" value={{ $products->special_deals == 1 ? 'checked': '' }}>
+            <input type="checkbox" id="checkbox_5" name="special_deals" value="1" {{ $products->special_deals == 1 ? 'checked': '' }}>
             <label for="checkbox_5">Special Deals</label>
         </fieldset>
     </div>

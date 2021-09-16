@@ -180,9 +180,11 @@
 
           @foreach($subcategories as $subcategory)
             <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-            <h2 class="title">
-@if(session()->get('language') == 'indonesia') {{ $subcategory->subcategory_name_id }} @else {{ $subcategory->subcategory_name_en }} @endif
-                </h2>
+            <a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
+              <h2 class="title">
+                @if(session()->get('language') == 'indonesia') {{ $subcategory->subcategory_name_id }} @else {{ $subcategory->subcategory_name_en }} @endif
+              </h2>
+            </a>
               
               <!--   // Get SubSubCategory Table Data -->
               @php
